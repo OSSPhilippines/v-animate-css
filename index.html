@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Animate Css</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+  <script src="./dist/v-animate-css.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style>
+    body {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .samples {
+      width: 100px;
+      height: 100px;
+      background-color: #42b883
+    }
+
+    .samples:hover {
+      cursor: pointer;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Robot', sans-serif;
+    }
+    p, div {
+      font-family: 'Robot', sans-serif;
+    }
+
+    .vue {
+      color: #42b883;
+    }
+
+    .btn-primary {
+      background-color: #42b883;
+      border: white;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:active {
+      background-color: #42b883;
+      border: white;
+      cursor: pointer;
+    }
+
+    #app {
+      padding-bottom: 100px;
+    }
+
+    .main-title {
+      font-size: 80px;
+    }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;  /* Preferred icon size */
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+
+      /* Support for all WebKit browsers. */
+      -webkit-font-smoothing: antialiased;
+      /* Support for Safari and Chrome. */
+      text-rendering: optimizeLegibility;
+
+      /* Support for Firefox. */
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Support for IE. */
+      font-feature-settings: 'liga';
+      margin-bottom: -100px !important; 
+    }
+
+    .animation-table-container {
+      height: 400px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body id="body">
+  <a href="https://github.com/jofftiquez/v-animate-css"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+
+	<div id="app">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-md-8 ">
+          <br>
+          <br>
+          <h1 class="main-title" align="center" v-animate-css="mainTitle"><span class="vue">Vue</span> Animate CSS</h1>
+          <h4 align="center"><pre>(v-animate-css)</pre></h4>
+          <p style="text-align: center">The easiest to implement <span class="vue"><strong>Vue</strong></span> directive for <a target="_blank" href="https://daneden.github.io/animate.css/">Animate.css</a></p>
+          <h2>Installation</h2>
+          <hr>
+          <h6><strong>NPM</strong></h6>
+          <code>npm install v-animate-css --save</code>
+          <br><br>
+          <h6><strong>Yarn</strong></h6>
+          <code>yarn add v-animate-css</code>
+          <br><br>
+          <h6><strong>CDN</strong></h6>
+          <code>https://unpkg.com/v-animate-css/dist/v-animate-css.js</code>
+          <br><br>
+          <h2>Usage</h2>
+          <hr>
+<pre>
+import Vue from 'vue';
+import VAnimateCss from 'v-animate-css';
+
+Vue.use(VAnimateCss);
+</pre>
+<strong>Or</strong>
+<pre>
+&ltscript src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"&gt&ltscript&gt
+&ltscript src="https://unpkg.com/v-animate-css/dist/v-animate-css.js"&gt&ltscript&gt
+
+&ltscript&gt
+  Vue.use(VAnimateCss.default);
+&lt/script&gt
+</pre>
+          <h2>Demo</h2>
+          <hr>
+          <strong>Simple</strong><br>
+          <p>Start the animation on page load.</p>
+          <small>Directive</small><br>
+          <code>v-animate-css="'fadeIn'"</code>
+          <br><br>
+          <small>Output</small><br>
+          <div class="samples" style="color:white; padding: 2px;" v-animate-css="'fadeIn'">
+            This is a div and nothing but a div
+          </div>
+          <small><i>Refresh the page to see the animation.</i></small>
+          <hr>
+          <strong>Click</strong><br>
+          <p>Start the animation on click event.</p>
+          <small>Directive</small><br>
+          <code>v-animate-css.click="'tada'"</code>
+          <br><br>
+          <small>Output</small><br>
+          <button class="btn btn-lg btn-primary" v-animate-css.click="'tada'">Click to Animate</button>
+          <hr>
+          <strong>Hover</strong><br>
+          <p>Start the animation <code>onmouseover</code> to the element.</p>
+          <small>Directive</small><br>
+          <code>v-animate-css.hover="'rotateIn'"</code>
+          <br><br>
+          <small>Output</small><br>
+          <img width="150" v-animate-css.hover="dogeAnimation" src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg">
+          <hr>
+          <strong>Object</strong><br>
+          <p>Start the animation on click event, with <strong>500ms</strong> delay and <strong>100ms</strong> animation duration.</p>
+          <small>Directive</small><br>
+          <code>v-animate-css.click="animationObject"</code><br><br>
+          <small>Data</small><br>
+<pre>
+animationObject:{
+  classes: 'tada',
+  delay: 500,
+  duration: 1000
+}
+</pre>
+          <small>Output</small><br>
+          <button class="btn btn-lg btn-primary" v-animate-css.click="animationObject">Click to Animate</button>
+          <hr>
+          <strong>Infinite</strong><br>
+          <p>Start the animation on page load, with <strong>5000ms</strong> animation duration and <strong>infinite</strong> iteration.</p>
+          <small>Directive</small><br>
+          <code>v-animate-css.click="animationInfinite"</code><br><br>
+          <small>Data</small><br>
+<pre>
+animationInfinite: {
+  classes: 'fadeIn',
+  duration: 5000,
+  iteration: 'infinite'
+}
+</pre>
+          <small>Output</small><br>
+          <img width="150" v-animate-css="animationInfinite" src="https://lh3.googleusercontent.com/j5fD3m5qXRNtGYDuajhEtS_etFvU8FE5PogmqTY2hrshDG0_urf_UBeVAyJljoCxdf4=w300">
+          <br><br>
+          <h2>API</h2>
+          <hr>
+          <h5><strong>Modifiers</strong></h5>
+          <br>
+          <p>This directive has 3 main modifiers <code>click</code>, <code>hover</code> and <code>once</code>.</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Modifier</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>click</code>
+                </td>
+                <td>This tells the directive to start the animation upon clicking the component. E.g. Button.</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>hover</code>
+                </td>
+                <td>This tells the directive to start the animation upon <code>onmouseover</code> event.</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>once</code>
+                </td>
+                <td>When <code>once</code> modifier is used, the directive will do the animation only once.</td>
+              </tr>
+            </tbody>
+          </table>
+          <br><br>
+          <h5><strong>Animation using object</strong></h5>
+          <br>
+          <p>Aside from plain usage <code>v-animate-css="'animation'"</code>, this directive can also accept an object, with different options.</p>
+<pre>
+  {
+    classes: 'bounce',
+    delay: 1000,
+    duration: 1000,
+    iteration: 5, // the animation will repeat 5 times.
+  }
+</pre>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Option</th>
+                <th>Description</th>
+                <th>Required?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>classes</code>
+                </td>
+                <td>The type of animation to be used.</td>
+                <td>YES</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>delay</code>
+                </td>
+                <td>The amount of delay time before the animation starts, in millis.</td>
+                <td>OPTIONAL</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>duration</code>
+                </td>
+                <td>The amount of time should the animation last, in millis.</td>
+                <td>OPTIONAL</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>iteration</code>
+                </td>
+                <td>The number of times the animation will be repeated. Any whole number or <code>infinite</code> for infinite iteration.</td>
+                <td>OPTIONAL</td>
+              </tr>
+            </tbody>
+          </table>
+          <br><br>
+          <h5><strong>Available Animations</strong></h5>
+          <br>
+          <strong>Animation <small>(Click the items to try the animations)</small></strong>
+          <div class="animation-table-container">
+            <table class="table table-hover">
+              <tbody>
+                <tr v-for="a in availableAnimations">
+                  <td align="center" v-animate-css.click="a"><span>{{ a }}</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br><br>
+          <h6>Made with <i class="material-icons" style="color:red;" v-animate-css="heartAnimation">favorite</i> by Jofferson Ramirez Tiquez</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+	<script>
+    Vue.use(VAnimateCss.default);
+    var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          animationObject: {
+            classes: 'tada',
+            delay: 500,
+            duration: 1000
+          },
+          animationInfinite: {
+            classes: 'fadeIn',
+            duration: 5000,
+            iteration: 'infinite'
+          },
+          mainTitle: {
+            classes: 'tada',
+            iteration: 'infinite'
+          },
+          dogeAnimation: {
+            classes: 'rotateIn'
+          },
+          heartAnimation: {
+            classes: 'pulse',
+            iteration: 'infinite'
+          },
+          availableAnimations: [
+            "bounce",
+            "flash",
+            "pulse",
+            "rubberBand",
+            "shake",
+            "headShake",
+            "swing",
+            "tada",
+            "wobble",
+            "jello",
+            "bounceIn",
+            "bounceInDown",
+            "bounceInLeft",
+            "bounceInRight",
+            "bounceInUp",
+            "bounceOut",
+            "bounceOutDown",
+            "bounceOutLeft",
+            "bounceOutRight",
+            "bounceOutUp",
+            "fadeIn",
+            "fadeInDown",
+            "fadeInDownBig",
+            "fadeInLeft",
+            "fadeInLeftBig",
+            "fadeInRight",
+            "fadeInRightBig",
+            "fadeInUp",
+            "fadeInUpBig",
+            "fadeOut",
+            "fadeOutDown",
+            "fadeOutDownBig",
+            "fadeOutLeft",
+            "fadeOutLeftBig",
+            "fadeOutRight",
+            "fadeOutRightBig",
+            "fadeOutUp",
+            "fadeOutUpBig",
+            "flipInX",
+            "flipInY",
+            "flipOutX",
+            "flipOutY",
+            "lightSpeedIn",
+            "lightSpeedOut",
+            "rotateIn",
+            "rotateInDownLeft",
+            "rotateInDownRight",
+            "rotateInUpLeft",
+            "rotateInUpRight",
+            "rotateOut",
+            "rotateOutDownLeft",
+            "rotateOutDownRight",
+            "rotateOutUpLeft",
+            "rotateOutUpRight",
+            "hinge",
+            "jackInTheBox",
+            "rollIn",
+            "rollOut",
+            "zoomIn",
+            "zoomInDown",
+            "zoomInLeft",
+            "zoomInRight",
+            "zoomInUp",
+            "zoomOut",
+            "zoomOutDown",
+            "zoomOutLeft",
+            "zoomOutRight",
+            "zoomOutUp",
+            "slideInDown",
+            "slideInLeft",
+            "slideInRight",
+            "slideInUp",
+            "slideOutDown",
+            "slideOutLeft",
+            "slideOutRight",
+            "slideOutUp"
+          ]
+        }
+      }
+    });
+  </script>
+</body>
+</html>
