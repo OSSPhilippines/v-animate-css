@@ -17,7 +17,7 @@ The easiest to implement Vue directive for Animate.css
 
 ### Usage
 
-```javscript
+```javascript
 import Vue from 'vue';
 import VAnimateCss from 'v-animate-css';
 
