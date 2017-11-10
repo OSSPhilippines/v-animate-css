@@ -24,7 +24,7 @@ import VAnimateCss from 'v-animate-css';
 Vue.use(VAnimateCss);
 ```
 
-```javscript
+```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
 <script src="https://unpkg.com/v-animate-css/dist/v-animate-css.js"></script>
 
