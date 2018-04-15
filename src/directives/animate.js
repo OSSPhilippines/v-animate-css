@@ -3,7 +3,7 @@ import scrollMonitor from 'scrollMonitor';
 
 export default (el, value, modifiers) => {
 	  const {
-    click, hover, once
+    click, hover, once, enter, enterFully, exit, exitPartially
   } = modifiers;
 
     const elementWatcher = (

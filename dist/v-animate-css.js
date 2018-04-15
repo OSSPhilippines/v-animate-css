@@ -228,7 +228,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function (el, value, modifiers) {
   var click = modifiers.click,
       hover = modifiers.hover,
-      once = modifiers.once;
+      once = modifiers.once,
+      enter = modifiers.enter,
+      enterFully = modifiers.enterFully,
+      exit = modifiers.exit,
+      exitPartially = modifiers.exitPartially;
 
 
   var elementWatcher = enter || enterFully || exit || exitPartially ? _scrollMonitor2.default.create(el) : false;
