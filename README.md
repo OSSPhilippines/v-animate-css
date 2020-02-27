@@ -4,6 +4,8 @@
 
 The easiest to implement Vue directive for Animate.css
 
+If you like this project, please give it a star, and consider following the author. :)
+
 ### Installation
 
 **NPM**
