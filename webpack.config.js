@@ -16,7 +16,7 @@ function createConfig(target) {
   }
 
   if(typeof target === 'undefined') {
-    name = 'vue-breathing-colors.js';
+    name = 'vue-animate-css.js';
     output = {
       path: path.resolve(__dirname, 'dist'),
       filename: name
