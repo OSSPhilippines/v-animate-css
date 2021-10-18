@@ -147,8 +147,6 @@ var _scrollmonitor2 = _interopRequireDefault(_scrollmonitor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.warn(_scrollmonitor2.default);
-
 exports.default = function (el, value, modifiers) {
   var click = modifiers.click,
       hover = modifiers.hover,
