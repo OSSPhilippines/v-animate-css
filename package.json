@@ -1,13 +1,13 @@
 {
   "name": "v-animate-css",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The easiest to implement Vue directive for Animate.css",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && webpack --progress --hide-modules"
   },
-   "dependencies": {
+  "dependencies": {
     "scrollmonitor": "^1.2.4"
   },
   "devDependencies": {
