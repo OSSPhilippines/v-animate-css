@@ -61,83 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-module.exports = ["animated","bounce","flash","pulse","rubberBand","shake","headShake","swing","tada","wobble","jello","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp","bounceOut","bounceOutDown","bounceOutLeft","bounceOutRight","bounceOutUp","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","fadeOut","fadeOutDown","fadeOutDownBig","fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","flipInX","flipInY","flipOutX","flipOutY","lightSpeedIn","lightSpeedOut","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","hinge","jackInTheBox","rollIn","rollOut","zoomIn","zoomInDown","zoomInLeft","zoomInRight","zoomInUp","zoomOut","zoomOutDown","zoomOutLeft","zoomOutRight","zoomOutUp","slideInDown","slideInLeft","slideInRight","slideInUp","slideOutDown","slideOutLeft","slideOutRight","slideOutUp"]
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.animateNow = exports.animationEnd = undefined;
-
-var _animations = __webpack_require__(0);
-
-var _animations2 = _interopRequireDefault(_animations);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var animationEnd = exports.animationEnd = function animationEnd(el, value, modifiers) {
-  if (modifiers.once) return;
-  el.addEventListener("animationend", function () {
-    var classes = el.classList;
-    _animations2.default.forEach(function (item) {
-      if (classes.contains(item)) {
-        el.classList.remove(item);
-        if (value.removeAfterAnimation) {
-          el.parentNode.removeChild(el);
-        }
-      }
-    });
-  }, false);
-};
-
-var animateNow = exports.animateNow = function animateNow(el, value, modifiers) {
-  var classes = value.classes,
-      duration = value.duration,
-      delay = value.delay,
-      iteration = value.iteration;
-
-
-  if (!!duration) {
-    el.style['-webkit-animation-duration'] = duration + 'ms';
-    el.style['-moz-animation-duration'] = duration + 'ms';
-    el.style['-o-animation-duration'] = duration + 'ms';
-    el.style['animation-duration'] = duration + 'ms';
-  }
-
-  if (!!delay) {
-    el.style['-webkit-animation-delay'] = delay + 'ms';
-    el.style['-moz-animation-delay'] = delay + 'ms';
-    el.style['-o-animation-delay'] = delay + 'ms';
-    el.style['animation-delay'] = delay + 'ms';
-  }
-
-  if (!!iteration) {
-    el.style['-webkit-animation-iteration-count'] = '' + iteration;
-    el.style['-moz-animation-iteration-count'] = '' + iteration;
-    el.style['-o-animation-iteration-count'] = '' + iteration;
-    el.style['animation-iteration-count'] = '' + iteration;
-  }
-
-  el.className = el.classList.value + ' animated ' + classes;
-
-  animationEnd(el, value, modifiers);
-};
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -147,7 +75,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _directives = __webpack_require__(3);
+var _directives = __webpack_require__(1);
 
 var _directives2 = _interopRequireDefault(_directives);
 
@@ -167,7 +95,7 @@ var VAnimateCss = {
 exports.default = VAnimateCss;
 
 /***/ }),
-/* 3 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -177,15 +105,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _animations = __webpack_require__(0);
-
-var _animations2 = _interopRequireDefault(_animations);
-
-var _animate = __webpack_require__(4);
+var _animate = __webpack_require__(2);
 
 var _animate2 = _interopRequireDefault(_animate);
-
-var _events = __webpack_require__(1);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -207,7 +129,7 @@ exports.default = function (Vue) {
 };
 
 /***/ }),
-/* 4 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -217,11 +139,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _events = __webpack_require__(1);
+var _events = __webpack_require__(3);
 
-var _scrollMonitor = __webpack_require__(5);
+var _scrollmonitor = __webpack_require__(5);
 
-var _scrollMonitor2 = _interopRequireDefault(_scrollMonitor);
+var _scrollmonitor2 = _interopRequireDefault(_scrollmonitor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -235,7 +157,7 @@ exports.default = function (el, value, modifiers) {
       exitPartially = modifiers.exitPartially;
 
 
-  var elementWatcher = enter || enterFully || exit || exitPartially ? _scrollMonitor2.default.create(el) : false;
+  var elementWatcher = enter || enterFully || exit || exitPartially ? _scrollmonitor2.default.create(el) : false;
 
   if (typeof value === 'string') {
     value = { classes: value };
@@ -285,6 +207,78 @@ exports.default = function (el, value, modifiers) {
 
   (0, _events.animateNow)(el, value, modifiers);
 };
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.animateNow = exports.animationEnd = undefined;
+
+var _animations = __webpack_require__(4);
+
+var _animations2 = _interopRequireDefault(_animations);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var animationEnd = exports.animationEnd = function animationEnd(el, value, modifiers) {
+  if (modifiers.once) return;
+  el.addEventListener('animationend', function () {
+    var classes = el.classList;
+    _animations2.default.forEach(function (item) {
+      if (classes.contains(item)) {
+        el.classList.remove(item);
+        if (value.removeAfterAnimation) {
+          el.parentNode.removeChild(el);
+        }
+      }
+    });
+  }, false);
+};
+
+var animateNow = exports.animateNow = function animateNow(el, value, modifiers) {
+  var classes = value.classes,
+      duration = value.duration,
+      delay = value.delay,
+      iteration = value.iteration;
+
+
+  if (!!duration) {
+    el.style['-webkit-animation-duration'] = duration + 'ms';
+    el.style['-moz-animation-duration'] = duration + 'ms';
+    el.style['-o-animation-duration'] = duration + 'ms';
+    el.style['animation-duration'] = duration + 'ms';
+  }
+
+  if (!!delay) {
+    el.style['-webkit-animation-delay'] = delay + 'ms';
+    el.style['-moz-animation-delay'] = delay + 'ms';
+    el.style['-o-animation-delay'] = delay + 'ms';
+    el.style['animation-delay'] = delay + 'ms';
+  }
+
+  if (!!iteration) {
+    el.style['-webkit-animation-iteration-count'] = '' + iteration;
+    el.style['-moz-animation-iteration-count'] = '' + iteration;
+    el.style['-o-animation-iteration-count'] = '' + iteration;
+    el.style['animation-iteration-count'] = '' + iteration;
+  }
+
+  el.className = el.classList.value + ' animated ' + classes;
+
+  animationEnd(el, value, modifiers);
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = ["animated","bounce","flash","pulse","rubberBand","shake","headShake","swing","tada","wobble","jello","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp","bounceOut","bounceOutDown","bounceOutLeft","bounceOutRight","bounceOutUp","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","fadeOut","fadeOutDown","fadeOutDownBig","fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","flipInX","flipInY","flipOutX","flipOutY","lightSpeedIn","lightSpeedOut","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","hinge","jackInTheBox","rollIn","rollOut","zoomIn","zoomInDown","zoomInLeft","zoomInRight","zoomInUp","zoomOut","zoomOutDown","zoomOutLeft","zoomOutRight","zoomOutUp","slideInDown","slideInLeft","slideInRight","slideInUp","slideOutDown","slideOutLeft","slideOutRight","slideOutUp"]
 
 /***/ }),
 /* 5 */

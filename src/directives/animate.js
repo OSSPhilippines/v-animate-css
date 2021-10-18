@@ -1,5 +1,5 @@
 import { animateNow } from './events';
-import scrollMonitor from 'scrollMonitor';
+import scrollMonitor from 'scrollmonitor';
 
 export default (el, value, modifiers) => {
 	  const {

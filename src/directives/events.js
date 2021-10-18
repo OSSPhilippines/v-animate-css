@@ -2,7 +2,7 @@ import animations from './animations';
 
 export const animationEnd = (el, value, modifiers) => {
   if(modifiers.once) return;
-  el.addEventListener("animationend", function() {
+  el.addEventListener('animationend', function() {
     const classes = el.classList;
     animations.forEach(item => {
       if(classes.contains(item)) {
