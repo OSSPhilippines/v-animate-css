@@ -1,6 +1,6 @@
 {
   "name": "v-animate-css",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The easiest to implement Vue directive for Animate.css",
   "main": "index.js",
   "scripts": {
