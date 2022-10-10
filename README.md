@@ -36,6 +36,6 @@ Vue.use(VAnimateCss);
 
 ```
 
-Demo and Docs [here](https://jofftiquez.github.io/v-animate-css/).
+Demo and Docs [here](https://ossphilippines.github.io/v-animate-css/). 
 
 Made with :heart: by Jofferson Ramirez Tiquez
