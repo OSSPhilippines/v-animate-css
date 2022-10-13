@@ -2,7 +2,7 @@
 
 ### `v-animate-css`
 
-This is easiest way to implement Vue directive for Animate.css 
+The easiest way to implement Vue directive for Animate.css 
 
 If you like this project, please give it a star :star: , and consider following the author :octocat: :wink: .
 
@@ -20,15 +20,12 @@ npm install v-animate-css --save
 yarn add v-animate-css
 ```
 
-<br>
+### Or just **import** this to project without installing
 
-### Or just **add** this to project without installing
-
-<br>
 
 ### Using **CDN** 
 
-```html
+```script
 https://unpkg.com/v-animate-css/dist/v-animate-css.js
 ```
 <br>
@@ -57,4 +54,4 @@ Vue.use(VAnimateCss);
 
 Demo and Docs [here](https://ossphilippines.github.io/v-animate-css/). 
 
-Made with :heart: by [Jofferson Ramirez Tiquez](https://github.com/jofftiquez)
+Made with :heart: by [Joff Tiquez](https://github.com/jofftiquez)
