@@ -1,23 +1,39 @@
-# Vue Animate CSS
+# **Vue Animate CSS**
 
 ### `v-animate-css`
 
-The easiest to implement Vue directive for Animate.css
+The easiest way to implement Vue directive for Animate.css 
 
-If you like this project, please give it a star, and consider following the author. :)
+If you like this project, please give it a star :star: , and consider following the author :octocat: :wink: .
 
-### Installation
+### Installation using **NPM** <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg" width="30" height="30">
 
-**NPM**
-`npm install v-animate-css --save`
+```shell
+npm install v-animate-css --save
+```
 
-**Yarn**
-`yarn add v-animate-css`
+### OR
 
-**CDN**
-`https://unpkg.com/v-animate-css/dist/v-animate-css.js`
+### Installation using **YARN** <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg" width="30" height="30">
 
-### Usage
+```shell
+yarn add v-animate-css
+```
+
+### Or just **import** this to project without installing
+
+
+### Using **CDN** 
+
+```script
+https://unpkg.com/v-animate-css/dist/v-animate-css.js
+```
+<br>
+
+## **Getting Started**
+
+
+### **Usage**
 
 ```javascript
 import Vue from 'vue';
@@ -38,4 +54,4 @@ Vue.use(VAnimateCss);
 
 Demo and Docs [here](https://ossphilippines.github.io/v-animate-css/). 
 
-Made with :heart: by Jofferson Ramirez Tiquez
+Made with :heart: by [Joff Tiquez](https://github.com/jofftiquez)
