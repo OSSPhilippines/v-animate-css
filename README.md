@@ -1,5 +1,7 @@
 # **Vue Animate CSS**
 
+![GitHub forks](https://img.shields.io/github/forks/ossphilippines/v-animate-css?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/ossphilippines/v-animate-css?style=for-the-badge)
+
 ### `v-animate-css`
 
 The easiest way to implement Vue directive for Animate.css 
