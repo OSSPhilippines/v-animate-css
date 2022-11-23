@@ -81,13 +81,16 @@ var _directives2 = _interopRequireDefault(_directives);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
-document.getElementsByTagName('head')[0].appendChild(link);
-
 var VAnimateCss = {
-  install: function install(Vue, options) {
+  install: function install(Vue) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    var animateCSSPath = options.animateCSSPath;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = animateCSSPath || 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
     (0, _directives2.default)(Vue);
   }
 };
@@ -113,15 +116,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function (Vue) {
   Vue.directive('animate-css', {
-    inserted: function inserted(el) {},
-    bind: function bind(el, binding, vnode) {
-      var name = binding.name,
-          value = binding.value,
-          oldValue = binding.oldValue,
-          expression = binding.expression,
-          arg = binding.arg,
+    inserted: function inserted() {},
+    bind: function bind(el, binding) {
+      var value = binding.value,
           modifiers = binding.modifiers;
-
 
       (0, _animate2.default)(el, value, modifiers);
     }
@@ -150,7 +148,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = function (el, value, modifiers) {
   var click = modifiers.click,
       hover = modifiers.hover,
-      once = modifiers.once,
       enter = modifiers.enter,
       enterFully = modifiers.enterFully,
       exit = modifiers.exit,
@@ -248,21 +245,21 @@ var animateNow = exports.animateNow = function animateNow(el, value, modifiers) 
       iteration = value.iteration;
 
 
-  if (!!duration) {
+  if (duration) {
     el.style['-webkit-animation-duration'] = duration + 'ms';
     el.style['-moz-animation-duration'] = duration + 'ms';
     el.style['-o-animation-duration'] = duration + 'ms';
     el.style['animation-duration'] = duration + 'ms';
   }
 
-  if (!!delay) {
+  if (delay) {
     el.style['-webkit-animation-delay'] = delay + 'ms';
     el.style['-moz-animation-delay'] = delay + 'ms';
     el.style['-o-animation-delay'] = delay + 'ms';
     el.style['animation-delay'] = delay + 'ms';
   }
 
-  if (!!iteration) {
+  if (iteration) {
     el.style['-webkit-animation-iteration-count'] = '' + iteration;
     el.style['-moz-animation-iteration-count'] = '' + iteration;
     el.style['-o-animation-iteration-count'] = '' + iteration;
