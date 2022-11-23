@@ -51,7 +51,22 @@ Vue.use(VAnimateCss);
 <script>
   Vue.use(VAnimateCss.default);
 </script>
+```
 
+#### Inject Local CSS
+
+Related to [Issue#33](https://github.com/OSSPhilippines/v-animate-css/issues/33) it make sense to give the user the option to add their own local version of Animate.css instead of relying to the default CDN version of Animate.css within the plugin.
+
+You can do it using the new animateCSSPath option.
+
+```js
+import Vue from 'vue';
+import VAnimateCss from 'v-animate-css';
+
+Vue.use(VAnimateCss, { animateCSSPath: './local-animate-css-file.css' });
+
+// You can also use this option to inject a newer version of Animate.css
+Vue.use(VAnimateCss, { animateCSSPath: 'cdn-link-to-a-newer-animate-css-version' });
 ```
 
 Demo and Docs [here](https://ossphilippines.github.io/v-animate-css/). 
