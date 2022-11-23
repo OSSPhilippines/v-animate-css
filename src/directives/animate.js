@@ -2,59 +2,59 @@ import { animateNow } from './events';
 import scrollMonitor from 'scrollmonitor';
 
 export default (el, value, modifiers) => {
-	  const {
-    click, hover, once, enter, enterFully, exit, exitPartially
+  const {
+    click, hover, enter, enterFully, exit, exitPartially,
   } = modifiers;
 
-    const elementWatcher = (
+  const elementWatcher = (
     enter || enterFully || exit || exitPartially
   ) ? scrollMonitor.create(el) : false;
 
-  if(typeof value === 'string') {
-    value = {classes:value}
+  if (typeof value === 'string') {
+    value = {classes:value};
   }
 
-  if(click) {
+  if (click) {
     el.onclick = () => {
       animateNow(el, value, modifiers);
-    }
+    };
     return;
   }
 
-  if(hover) {
+  if (hover) {
     el.onmouseover = () => {
       animateNow(el, value, modifiers);
-    }
+    };
     return;
   }
 
-  if(enter) {
+  if (enter) {
     elementWatcher.enterViewport(() => {
-      animateNow(el, value, modifiers)
+      animateNow(el, value, modifiers);
     });
     return;
   }
 
-  if(enterFully) {
+  if (enterFully) {
     elementWatcher.fullyEnterViewport(() => {
-      animateNow(el, value, modifiers)
+      animateNow(el, value, modifiers);
     });
     return;
   }
 
-  if(exit) {
+  if (exit) {
     elementWatcher.exitViewport(() => {
-      animateNow(el, value, modifiers)
+      animateNow(el, value, modifiers);
     });
     return;
   }
 
-  if(exitPartially) {
+  if (exitPartially) {
     elementWatcher.partiallyExitViewport(() => {
-      animateNow(el, value, modifiers)
+      animateNow(el, value, modifiers);
     });
     return;
   }
 
   animateNow(el, value, modifiers);
-}
+};
