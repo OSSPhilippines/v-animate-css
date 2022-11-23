@@ -30,10 +30,8 @@ yarn add v-animate-css
 ```script
 https://unpkg.com/v-animate-css/dist/v-animate-css.js
 ```
-<br>
 
 ## **Getting Started**
-
 
 ### **Usage**
 
@@ -53,7 +51,7 @@ Vue.use(VAnimateCss);
 </script>
 ```
 
-#### Inject Local CSS
+### **Injecting Alternative CSS Link (local or CDN)**
 
 Related to [Issue#33](https://github.com/OSSPhilippines/v-animate-css/issues/33) it make sense to give the user the option to add their own local version of Animate.css instead of relying to the default CDN version of Animate.css within the plugin.
 
