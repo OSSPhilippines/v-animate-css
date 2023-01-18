@@ -1,26 +1,27 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  env: {
+    es2021: true,
+    node: true,
   },
-  'extends': [
+  extends: [
+    'standard',
+    'semistandard',
     'eslint:recommended',
     'plugin:vue/vue3-essential',
   ],
-  'overrides': [
-  ],
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module',
+  overrides: [],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  'plugins': [
+  plugins: [
     'vue',
   ],
-  'rules': {
+  rules: {
     'generator-star-spacing': 'off',
     'arrow-parens': 'off',
     'one-var': 'off',
-    'semi': [2, 'always'],
+    semi: [2, 'always'],
     'space-before-function-paren': [2, 'always'],
     'keyword-spacing': [2, { before: true, after: true }],
     'space-before-blocks': [2, 'always'],

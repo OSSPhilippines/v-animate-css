@@ -81,6 +81,8 @@ var _directives2 = _interopRequireDefault(_directives);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var ANIMATE_CSS_CDN_LINK = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
+
 var VAnimateCss = {
   install: function install(Vue) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -88,7 +90,7 @@ var VAnimateCss = {
     var animateCSSPath = options.animateCSSPath;
     var link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = animateCSSPath || 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+    link.href = animateCSSPath || ANIMATE_CSS_CDN_LINK;
     document.getElementsByTagName('head')[0].appendChild(link);
 
     (0, _directives2.default)(Vue);
@@ -116,8 +118,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = function (Vue) {
   Vue.directive('animate-css', {
-    inserted: function inserted() {},
-    bind: function bind(el, binding) {
+    mounted: function mounted() {},
+    beforeMount: function beforeMount(el, binding) {
       var value = binding.value,
           modifiers = binding.modifiers;
 
@@ -228,14 +230,14 @@ var animationEnd = exports.animationEnd = function animationEnd(el, value, modif
   el.addEventListener('animationend', function () {
     var classes = el.classList;
     _animations2.default.forEach(function (item) {
-      if (classes.contains(item)) {
-        el.classList.remove(item);
+      if (classes.contains('animate__' + item)) {
+        el.classList.remove('animate__' + item);
         if (value.removeAfterAnimation) {
           el.parentNode.removeChild(el);
         }
       }
     });
-  }, false);
+  });
 };
 
 var animateNow = exports.animateNow = function animateNow(el, value, modifiers) {
@@ -266,7 +268,7 @@ var animateNow = exports.animateNow = function animateNow(el, value, modifiers) 
     el.style['animation-iteration-count'] = '' + iteration;
   }
 
-  el.className = el.classList.value + ' animated ' + classes;
+  el.classList.add('animate__animated', 'animate__' + classes);
 
   animationEnd(el, value, modifiers);
 };
@@ -275,7 +277,7 @@ var animateNow = exports.animateNow = function animateNow(el, value, modifiers) 
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = ["animated","bounce","flash","pulse","rubberBand","shake","headShake","swing","tada","wobble","jello","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp","bounceOut","bounceOutDown","bounceOutLeft","bounceOutRight","bounceOutUp","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","fadeOut","fadeOutDown","fadeOutDownBig","fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","flipInX","flipInY","flipOutX","flipOutY","lightSpeedIn","lightSpeedOut","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","hinge","jackInTheBox","rollIn","rollOut","zoomIn","zoomInDown","zoomInLeft","zoomInRight","zoomInUp","zoomOut","zoomOutDown","zoomOutLeft","zoomOutRight","zoomOutUp","slideInDown","slideInLeft","slideInRight","slideInUp","slideOutDown","slideOutLeft","slideOutRight","slideOutUp"]
+module.exports = ["animated","bounce","backInDown","backInLeft","backInRight","backInUp","backOutDown","backOutLeft","backOutRight","backOutUp","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp","bounceOut","bounceOutDown","bounceOutLeft","bounceOutRight","bounceOutUp","flash","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight","fadeOut","fadeOutDown","fadeOutDownBig","fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","fadeOutTopLeft","fadeOutTopRight","fadeOutBottomLeft","fadeOutBottomRight","flipInX","flipInY","flipOutX","flipOutY","headShake","heartBeat","hinge","jello","jackInTheBox","lightSpeedInRight","lightSpeedInLeft","lightSpeedOutRight","lightSpeedOutLeft","pulse","rubberBand","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","rollIn","rollOut","shakeX","shakeY","swing","slideInDown","slideInLeft","slideInRight","slideInUp","slideOutDown","slideOutLeft","slideOutRight","slideOutUp","tada","wobble","zoomIn","zoomInDown","zoomInLeft","zoomInRight","zoomInUp","zoomOut","zoomOutDown","zoomOutLeft","zoomOutRight","zoomOutUp"]
 
 /***/ }),
 /* 5 */

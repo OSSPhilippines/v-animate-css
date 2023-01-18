@@ -8,10 +8,12 @@ export default (el, value, modifiers) => {
 
   const elementWatcher = (
     enter || enterFully || exit || exitPartially
-  ) ? scrollMonitor.create(el) : false;
+  )
+    ? scrollMonitor.create(el)
+    : false;
 
   if (typeof value === 'string') {
-    value = {classes:value};
+    value = { classes: value };
   }
 
   if (click) {
