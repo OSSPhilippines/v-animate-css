@@ -86,10 +86,10 @@ var VAnimateCss = {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
     var animateCSSPath = options.animateCSSPath;
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = animateCSSPath || 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
-    document.getElementsByTagName('head')[0].appendChild(link);
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = animateCSSPath || "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css";
+    document.getElementsByTagName("head")[0].appendChild(link);
 
     (0, _directives2.default)(Vue);
   }
@@ -115,9 +115,9 @@ var _animate2 = _interopRequireDefault(_animate);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function (Vue) {
-  Vue.directive('animate-css', {
-    inserted: function inserted() {},
-    bind: function bind(el, binding) {
+  Vue.directive("animate-css", {
+    mounted: function mounted() {},
+    beforeMount: function beforeMount(el, binding) {
       var value = binding.value,
           modifiers = binding.modifiers;
 
@@ -225,17 +225,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var animationEnd = exports.animationEnd = function animationEnd(el, value, modifiers) {
   if (modifiers.once) return;
-  el.addEventListener('animationend', function () {
+  el.addEventListener("animationend", function () {
     var classes = el.classList;
     _animations2.default.forEach(function (item) {
-      if (classes.contains(item)) {
-        el.classList.remove(item);
+      if (classes.contains("animate__" + item)) {
+        el.classList.remove("animate__" + item);
+        console.log(value);
         if (value.removeAfterAnimation) {
           el.parentNode.removeChild(el);
         }
       }
     });
-  }, false);
+  });
 };
 
 var animateNow = exports.animateNow = function animateNow(el, value, modifiers) {
@@ -246,27 +247,30 @@ var animateNow = exports.animateNow = function animateNow(el, value, modifiers) 
 
 
   if (duration) {
-    el.style['-webkit-animation-duration'] = duration + 'ms';
-    el.style['-moz-animation-duration'] = duration + 'ms';
-    el.style['-o-animation-duration'] = duration + 'ms';
-    el.style['animation-duration'] = duration + 'ms';
+    el.style["-webkit-animation-duration"] = duration + "ms";
+    el.style["-moz-animation-duration"] = duration + "ms";
+    el.style["-o-animation-duration"] = duration + "ms";
+    el.style["animation-duration"] = duration + "ms";
   }
 
   if (delay) {
-    el.style['-webkit-animation-delay'] = delay + 'ms';
-    el.style['-moz-animation-delay'] = delay + 'ms';
-    el.style['-o-animation-delay'] = delay + 'ms';
-    el.style['animation-delay'] = delay + 'ms';
+    el.style["-webkit-animation-delay"] = delay + "ms";
+    el.style["-moz-animation-delay"] = delay + "ms";
+    el.style["-o-animation-delay"] = delay + "ms";
+    el.style["animation-delay"] = delay + "ms";
   }
 
   if (iteration) {
-    el.style['-webkit-animation-iteration-count'] = '' + iteration;
-    el.style['-moz-animation-iteration-count'] = '' + iteration;
-    el.style['-o-animation-iteration-count'] = '' + iteration;
-    el.style['animation-iteration-count'] = '' + iteration;
+    el.style["-webkit-animation-iteration-count"] = "" + iteration;
+    el.style["-moz-animation-iteration-count"] = "" + iteration;
+    el.style["-o-animation-iteration-count"] = "" + iteration;
+    el.style["animation-iteration-count"] = "" + iteration;
   }
 
-  el.className = el.classList.value + ' animated ' + classes;
+  // 
+  el.classList.add("animate__animated", "animate__" + classes);
+  console.log(el.classList);
+  // el.className = `${el.classList.value} animate__animated animate__${classes}`;
 
   animationEnd(el, value, modifiers);
 };
@@ -275,7 +279,7 @@ var animateNow = exports.animateNow = function animateNow(el, value, modifiers) 
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = ["animated","bounce","flash","pulse","rubberBand","shake","headShake","swing","tada","wobble","jello","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp","bounceOut","bounceOutDown","bounceOutLeft","bounceOutRight","bounceOutUp","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","fadeOut","fadeOutDown","fadeOutDownBig","fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","flipInX","flipInY","flipOutX","flipOutY","lightSpeedIn","lightSpeedOut","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","hinge","jackInTheBox","rollIn","rollOut","zoomIn","zoomInDown","zoomInLeft","zoomInRight","zoomInUp","zoomOut","zoomOutDown","zoomOutLeft","zoomOutRight","zoomOutUp","slideInDown","slideInLeft","slideInRight","slideInUp","slideOutDown","slideOutLeft","slideOutRight","slideOutUp"]
+module.exports = ["animated","bounce","flash","pulse","rubberBand","shakeX","shakeY","headShake","swing","tada","wobble","jello","heartBeat","backInDown","backInLeft","backInRight","backInUp","backOutDown","backOutLeft","backOutRight","backOutUp","bounceIn","bounceInDown","bounceInLeft","bounceInRight","bounceInUp","bounceOut","bounceOutDown","bounceOutLeft","bounceOutRight","bounceOutUp","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig","fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","fadeInTopLeft","fadeInTopRight","fadeInBottomLeft","fadeInBottomRight","fadeOut","fadeOutDown","fadeOutDownBig","fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","fadeOutTopLeft","fadeOutTopRight","fadeOutBottomLeft","fadeOutBottomRight","flipInX","flipInY","flipOutX","flipOutY","lightSpeedInRight","lightSpeedInLeft","lightSpeedOutRight","lightSpeedOutLeft","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","hinge","jackInTheBox","rollIn","rollOut","zoomIn","zoomInDown","zoomInLeft","zoomInRight","zoomInUp","zoomOut","zoomOutDown","zoomOutLeft","zoomOutRight","zoomOutUp","slideInDown","slideInLeft","slideInRight","slideInUp","slideOutDown","slideOutLeft","slideOutRight","slideOutUp"]
 
 /***/ }),
 /* 5 */

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && webpack --progress --hide-modules",
+    "build:win": "del /f dist && webpack --progress --hide-modules",
     "lint": "yarn run eslint --fix"
   },
   "dependencies": {
