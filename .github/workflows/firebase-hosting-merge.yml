@@ -15,5 +15,7 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_OSSPH_ORG }}'
-          channelId: live
           projectId: ossph-org
+          siteId: v-animate-css
+          target: production
+          channelId: live
