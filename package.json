@@ -29,7 +29,8 @@
     "vue",
     "vuejs",
     "animate",
-    "animationcss"
+    "animationcss",
+    "animate-css"
   ],
   "author": "jofftiquez@gmail.com",
   "license": "MIT",
