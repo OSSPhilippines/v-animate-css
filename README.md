@@ -4,9 +4,11 @@
 
 ### `v-animate-css`
 
-The easiest way to implement Vue directive for Animate.css 
+Animate.css for Vue.js 3
 
 If you like this project, please give it a star :star: , and consider following the author :octocat: :wink: .
+
+> Vue 2 version is no longer maintained but [the code is available here](https://github.com/OSSPhilippines/v-animate-css/tree/version/vue-2). You can still contribute if you wish so, and we will publish them for Vue 2.
 
 ### Installation using **NPM** <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg" width="30" height="30">
 

@@ -1,7 +1,7 @@
 {
   "name": "v-animate-css",
   "version": "1.0.0",
-  "description": "The easiest to implement Vue directive for Animate.css",
+  "description": "Animate CSS for Vue.js 3",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jofftiquez/v-animate-css.git"
+    "url": "git+https://github.com/OSSPhilippines/v-animate-css.git"
   },
   "keywords": [
     "vue",
@@ -43,7 +43,7 @@
   "author": "jofftiquez@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jofftiquez/v-animate-css/issues"
+    "url": "https://github.com/OSSPhilippines/v-animate-css/issues"
   },
-  "homepage": "https://github.com/jofftiquez/v-animate-css#readme"
+  "homepage": "https://github.com/OSSPhilippines/v-animate-css#readme"
 }
