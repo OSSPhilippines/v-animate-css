@@ -9,6 +9,9 @@
     "build:win": "del /f dist && webpack --progress --hide-modules",
     "lint": "eslint --fix ./src"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "scrollmonitor": "^1.2.4"
   },
