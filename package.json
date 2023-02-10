@@ -1,5 +1,5 @@
 {
-  "name": "@ossph/v-animate-css",
+  "name": "v-animate-css",
   "version": "1.0.0",
   "description": "The easiest to implement Vue directive for Animate.css",
   "main": "index.js",
