@@ -3,16 +3,19 @@
 
 <head>
   <title>Vue Animate Css</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
   <!-- Fork Corner -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-corner/dist/fork-corner.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-corner/dist/fork-corner.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/fork-corner/dist/fork-corner.min.js" defer></script>
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/classic-dark.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
   <style>
     body {
       padding: 0 !important;
@@ -22,7 +25,7 @@
     .samples {
       width: 100px;
       height: 100px;
-      background-color: #42b883
+      background-color: #42b883;
     }
 
     .samples:hover {
@@ -35,12 +38,16 @@
     h4,
     h5,
     h6 {
-      font-family: 'Robot', sans-serif;
+      font-family: "Robot", sans-serif;
+    }
+
+    pre {
+      border-radius: 5px;
     }
 
     p,
     div {
-      font-family: 'Robot', sans-serif;
+      font-family: "Robot", sans-serif;
     }
 
     .vue {
@@ -68,7 +75,7 @@
     }
 
     .material-icons {
-      font-family: 'Material Icons';
+      font-family: "Material Icons";
       font-weight: normal;
       font-style: normal;
       font-size: 24px;
@@ -90,13 +97,26 @@
       -moz-osx-font-smoothing: grayscale;
 
       /* Support for IE. */
-      font-feature-settings: 'liga';
+      font-feature-settings: "liga";
       margin-bottom: -100px !important;
     }
 
     .animation-table-container {
       height: 400px;
       overflow-y: auto;
+    }
+
+    .divider {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .divider-line {
+      width: 100%;
     }
 
     .grid-container {
@@ -126,130 +146,169 @@
   <div id="app">
     <div class="container">
       <div class="row justify-content-md-center">
-        <div class="col-sm-12 col-md-8 ">
-          <br>
-          <br>
-          <h1 class="main-title" align="center" v-animate-css="mainTitle"><span class="vue">Vue</span> Animate CSS</h1>
+        <div class="col-sm-12 col-md-8">
+          <br />
+          <br />
+          <h1 class="main-title" align="center" v-animate-css="mainTitle">
+            <span class="vue">Vue</span> Animate CSS
+          </h1>
           <h4 align="center">
-            <pre>(v-animate-css)</pre>
+            <code>(v-animate-css)</code>
           </h4>
-          <p style="text-align: center">The easiest to implement <span class="vue"><strong>Vue</strong></span> directive
-            for <a target="_blank" href="https://daneden.github.io/animate.css/">Animate.css</a></p>
-          <p style="text-align: center">Star on <a href="https://github.com/OSSPhilippines/v-animate-css"
-              target="_blank">GitHub</a></p>
+          <p style="text-align: center">
+            The easiest to implement
+            <span class="vue"><strong>Vue</strong></span> directive for
+            <a target="_blank" href="https://daneden.github.io/animate.css/">Animate.css</a>
+          </p>
+          <p style="text-align: center">
+            Star on
+            <a href="https://github.com/OSSPhilippines/v-animate-css" target="_blank">GitHub</a>
+          </p>
           <h2>Installation</h2>
-          <hr>
+          <hr />
           <h6><strong>NPM</strong></h6>
           <code>npm install v-animate-css --save</code>
-          <br><br>
+          <br /><br />
           <h6><strong>Yarn</strong></h6>
           <code>yarn add v-animate-css</code>
-          <br><br>
+          <br /><br />
           <h6><strong>CDN</strong></h6>
           <code>https://unpkg.com/v-animate-css/dist/v-animate-css.js</code>
-          <br><br>
+          <br /><br />
           <h2>Usage</h2>
-          <hr>
+          <hr />
           <pre>
-import Vue from 'vue';
+import { createApp } from 'vue';
 import VAnimateCss from 'v-animate-css';
 
-Vue.use(VAnimateCss);
-</pre>
-          <strong>Or</strong>
+const app = createApp({})
+
+app.use(VAnimateCss);
+app.mount("#app")
+          </pre>
+          <div class="divider">
+            <hr class="divider-line">
+            OR
+            <hr class="divider-line">
+          </div>
           <pre>
-&ltscript src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"&gt&ltscript&gt
+&ltscript src="https://unpkg.com/vue@3/dist/vue.global.js"&gt&ltscript&gt
 &ltscript src="https://unpkg.com/v-animate-css/dist/v-animate-css.js"&gt&ltscript&gt
 
 &ltscript&gt
-  Vue.use(VAnimateCss.default);
+    const { createApp } = Vue
+    const app = createApp({...});
+    app.use(VAnimateCss.default);
+    app.mount("#app");
 &lt/script&gt
-</pre>
+          </pre>
           <h2>Inject Local CSS</h2>
-          <hr>
-          <p>Related to <a href="https://github.com/OSSPhilippines/v-animate-css/issues/33">Issue#33</a> it make sense
-            to give the user the option to add their own local version of Animate.css instead of relying to the default
-            CDN version of Animate.css within the plugin.</p>
-          <p>You can do it using the new <code>animateCSSPath</code> option.</p>
+          <hr />
+          <p>
+            Related to
+            <a href="https://github.com/OSSPhilippines/v-animate-css/issues/33">Issue#33</a>
+            it make sense to give the user the option to add their own local
+            version of Animate.css instead of relying to the default CDN
+            version of Animate.css within the plugin.
+          </p>
+          <p>
+            You can do it using the new <code>animateCSSPath</code> option.
+          </p>
           <pre>
-import Vue from 'vue';
+import { createApp } from 'vue';
 import VAnimateCss from 'v-animate-css';
 
-Vue.use(VAnimateCss, { animateCSSPath: './local-animate-css-file.css' });
+const app = createApp({...})
+
+app.use(VAnimateCss, { animateCSSPath: './local-animate-css-file.css' });
 
 // You can also use this option to inject a newer version of Animate.css
 
-Vue.use(VAnimateCss, { animateCSSPath: 'cdn-link-to-a-newer-animate-css-version' });
-</pre>
+app.use(VAnimateCss, { animateCSSPath: 'cdn-link-to-a-newer-animate-css-version' });
+
+app.mount("#app")
+          </pre>
           <h2>Demo</h2>
-          <hr>
-          <strong>Simple</strong><br>
+          <hr />
+          <strong>Simple</strong><br />
           <p>Start the animation on page load.</p>
-          <small>Directive</small><br>
+          <small>Directive</small><br />
           <code>v-animate-css="'fadeIn'"</code>
-          <br><br>
-          <small>Output</small><br>
-          <div class="samples" style="color:white; padding: 2px;" v-animate-css="'fadeIn'">
+          <br /><br />
+          <small>Output</small><br />
+          <div class="samples" style="color: white; padding: 2px" v-animate-css="'fadeIn'">
             This is a div and nothing but a div
           </div>
           <small><i>Refresh the page to see the animation.</i></small>
-          <hr>
-          <strong>Click</strong><br>
+          <hr />
+          <strong>Click</strong><br />
           <p>Start the animation on click event.</p>
-          <small>Directive</small><br>
+          <small>Directive</small><br />
           <code>v-animate-css.click="'tada'"</code>
-          <br><br>
-          <small>Output</small><br>
-          <button class="btn btn-lg btn-primary" v-animate-css.click="'tada'">Click to Animate</button>
-          <hr>
-          <strong>Hover</strong><br>
+          <br /><br />
+          <small>Output</small><br />
+          <button class="btn btn-lg btn-primary" v-animate-css.click="'tada'">
+            Click to Animate
+          </button>
+          <hr />
+          <strong>Hover</strong><br />
           <p>Start the animation <code>onmouseover</code> to the element.</p>
-          <small>Directive</small><br>
+          <small>Directive</small><br />
           <code>v-animate-css.hover="'rotateIn'"</code>
-          <br><br>
-          <small>Output</small><br>
+          <br /><br />
+          <small>Output</small><br />
           <img width="150" v-animate-css.hover="dogeAnimation"
-            src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg">
-          <hr>
-          <strong>Object</strong><br>
-          <p>Start the animation on click event, with <strong>500ms</strong> delay and <strong>100ms</strong> animation
-            duration.</p>
-          <small>Directive</small><br>
-          <code>v-animate-css.click="animationObject"</code><br><br>
-          <small>Data</small><br>
+            src="https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg" />
+          <hr />
+          <strong>Object</strong><br />
+          <p>
+            Start the animation on click event, with
+            <strong>500ms</strong> delay and <strong>100ms</strong> animation
+            duration.
+          </p>
+          <small>Directive</small><br />
+          <code>v-animate-css.click="animationObject"</code><br /><br />
+          <small>Data</small><br />
           <pre>
-animationObject:{
+animationObject: {
   classes: 'tada',
   delay: 500,
   duration: 1000
 }
-</pre>
-          <small>Output</small><br>
-          <button class="btn btn-lg btn-primary" v-animate-css.click="animationObject">Click to Animate</button>
-          <hr>
-          <strong>Infinite</strong><br>
-          <p>Start the animation on page load, with <strong>5000ms</strong> animation duration and
+          </pre>
+          <small>Output</small><br />
+          <button class="btn btn-lg btn-primary" v-animate-css.click="animationObject">
+            Click to Animate
+          </button>
+          <hr />
+          <strong>Infinite</strong><br />
+          <p>
+            Start the animation on page load, with
+            <strong>5000ms</strong> animation duration and
             <strong>infinite</strong> iteration.
           </p>
-          <small>Directive</small><br>
-          <code>v-animate-css.click="animationInfinite"</code><br><br>
-          <small>Data</small><br>
+          <small>Directive</small><br />
+          <code>v-animate-css.click="animationInfinite"</code><br /><br />
+          <small>Data</small><br />
           <pre>
 animationInfinite: {
   classes: 'fadeIn',
   duration: 5000,
   iteration: 'infinite'
 }
-</pre>
-          <small>Output</small><br>
+          </pre>
+          <small>Output</small><br />
           <img width="150" v-animate-css="animationInfinite"
-            src="https://lh3.googleusercontent.com/j5fD3m5qXRNtGYDuajhEtS_etFvU8FE5PogmqTY2hrshDG0_urf_UBeVAyJljoCxdf4=w300">
-          <br><br>
+            src="https://lh3.googleusercontent.com/j5fD3m5qXRNtGYDuajhEtS_etFvU8FE5PogmqTY2hrshDG0_urf_UBeVAyJljoCxdf4=w300" />
+          <br /><br />
           <h2>API</h2>
-          <hr>
+          <hr />
           <h5><strong>Modifiers</strong></h5>
-          <br>
-          <p>This directive has 3 main modifiers <code>click</code>, <code>hover</code> and <code>once</code>.</p>
+          <br />
+          <p>
+            This directive has 3 main modifiers <code>click</code>,
+            <code>hover</code> and <code>once</code>.
+          </p>
           <table class="table table-hover">
             <thead>
               <tr>
@@ -262,35 +321,46 @@ animationInfinite: {
                 <td>
                   <code>click</code>
                 </td>
-                <td>This tells the directive to start the animation upon clicking the component. E.g. Button.</td>
+                <td>
+                  This tells the directive to start the animation upon
+                  clicking the component. E.g. Button.
+                </td>
               </tr>
               <tr>
                 <td>
                   <code>hover</code>
                 </td>
-                <td>This tells the directive to start the animation upon <code>onmouseover</code> event.</td>
+                <td>
+                  This tells the directive to start the animation upon
+                  <code>onmouseover</code> event.
+                </td>
               </tr>
               <tr>
                 <td>
                   <code>once</code>
                 </td>
-                <td>When <code>once</code> modifier is used, the directive will do the animation only once.</td>
+                <td>
+                  When <code>once</code> modifier is used, the directive will
+                  do the animation only once.
+                </td>
               </tr>
             </tbody>
           </table>
-          <br><br>
+          <br /><br />
           <h5><strong>Animation using object</strong></h5>
-          <br>
-          <p>Aside from plain usage <code>v-animate-css="'animation'"</code>, this directive can also accept an object,
-            with different options.</p>
+          <br />
+          <p>
+            Aside from plain usage <code>v-animate-css="'animation'"</code>,
+            this directive can also accept an object, with different options.
+          </p>
           <pre>
-  {
-    classes: 'bounce',
-    delay: 1000,
-    duration: 1000,
-    iteration: 5, // the animation will repeat 5 times.
-  }
-</pre>
+{
+  classes: 'bounce',
+  delay: 1000,
+  duration: 1000,
+  iteration: 5, // the animation will repeat 5 times.
+}
+          </pre>
           <table class="table table-hover">
             <thead>
               <tr>
@@ -311,30 +381,39 @@ animationInfinite: {
                 <td>
                   <code>delay</code>
                 </td>
-                <td>The amount of delay time before the animation starts, in millis.</td>
+                <td>
+                  The amount of delay time before the animation starts, in
+                  millis.
+                </td>
                 <td>OPTIONAL</td>
               </tr>
               <tr>
                 <td>
                   <code>duration</code>
                 </td>
-                <td>The amount of time should the animation last, in millis.</td>
+                <td>
+                  The amount of time should the animation last, in millis.
+                </td>
                 <td>OPTIONAL</td>
               </tr>
               <tr>
                 <td>
                   <code>iteration</code>
                 </td>
-                <td>The number of times the animation will be repeated. Any whole number or <code>infinite</code> for
-                  infinite iteration.</td>
+                <td>
+                  The number of times the animation will be repeated. Any
+                  whole number or <code>infinite</code> for infinite
+                  iteration.
+                </td>
                 <td>OPTIONAL</td>
               </tr>
             </tbody>
           </table>
-          <br><br>
+          <br /><br />
           <h5><strong>Available Animations</strong></h5>
-          <br>
-          <strong>Animation <small>(Click the items to try the animations)</small></strong>
+          <br />
+          <strong>Animation
+            <small>(Click the items to try the animations)</small></strong>
           <div class="grid-container">
             <template v-for="a in availableAnimations">
               <div class="grid-item" v-animate-css.click="a">
@@ -342,11 +421,13 @@ animationInfinite: {
               </div>
             </template>
           </div>
-          <br><br>
-          <h6>Made with
-            <i class="material-icons" style="color:red;" v-animate-css="heartAnimation">favorite</i>
+          <br /><br />
+          <h6>
+            Made with
+            <i class="material-icons" style="color: red" v-animate-css="heartAnimation">favorite</i>
             by
-            <a href="https://twitter.com/jrtiquez" target="_blank">Joff Tiquez</a> and
+            <a href="https://twitter.com/jrtiquez" target="_blank">Joff Tiquez</a>
+            and
             <a href="https://ossph.org" target="_blank">OSSPH</a>
           </h6>
         </div>
@@ -355,43 +436,61 @@ animationInfinite: {
   </div>
   <script src="./dist/v-animate-css.js"></script>
   <script>
-    Vue.use(VAnimateCss.default);
-    var vm = new Vue({
-      el: '#app',
+    // Highlight JS Syntax Highlighting 
+    var preTags = document.getElementsByTagName('pre');
+    var size = preTags.length;
+    for (var i = 0; i < size; i++) {
+      preTags[i].innerHTML = '<code>' + preTags[i].innerHTML + '</code>'; // wrap content of pre tag in code tag
+    }
+    hljs.highlightAll(); // apply highlighting
+
+    // Vue 3 app
+    const { createApp } = Vue
+    const app = createApp({
       data() {
         return {
           animationObject: {
-            classes: 'tada',
+            classes: "tada",
             delay: 500,
-            duration: 1000
+            duration: 1000,
           },
           animationInfinite: {
-            classes: 'fadeIn',
+            classes: "fadeIn",
             duration: 5000,
-            iteration: 'infinite'
+            iteration: "infinite",
           },
           mainTitle: {
-            classes: 'tada',
-            iteration: 'infinite'
+            classes: "tada",
+            iteration: "infinite",
           },
           dogeAnimation: {
-            classes: 'rotateIn'
+            classes: "rotateIn",
           },
           heartAnimation: {
-            classes: 'pulse',
-            iteration: 'infinite'
+            classes: "pulse",
+            iteration: "infinite",
           },
           availableAnimations: [
             "bounce",
             "flash",
             "pulse",
             "rubberBand",
-            "shake",
+            "shakeX",
+            "shakeY",
             "headShake",
             "swing",
             "tada",
             "wobble",
             "jello",
+            "heartBeat",
+            "backInDown",
+            "backInLeft",
+            "backInRight",
+            "backInUp",
+            "backOutDown",
+            "backOutLeft",
+            "backOutRight",
+            "backOutUp",
             "bounceIn",
             "bounceInDown",
             "bounceInLeft",
@@ -411,6 +510,10 @@ animationInfinite: {
             "fadeInRightBig",
             "fadeInUp",
             "fadeInUpBig",
+            "fadeInTopLeft",
+            "fadeInTopRight",
+            "fadeInBottomLeft",
+            "fadeInBottomRight",
             "fadeOut",
             "fadeOutDown",
             "fadeOutDownBig",
@@ -420,12 +523,18 @@ animationInfinite: {
             "fadeOutRightBig",
             "fadeOutUp",
             "fadeOutUpBig",
+            "fadeOutTopLeft",
+            "fadeOutTopRight",
+            "fadeOutBottomLeft",
+            "fadeOutBottomRight",
             "flipInX",
             "flipInY",
             "flipOutX",
             "flipOutY",
-            "lightSpeedIn",
-            "lightSpeedOut",
+            "lightSpeedInRight",
+            "lightSpeedInLeft",
+            "lightSpeedOutRight",
+            "lightSpeedOutLeft",
             "rotateIn",
             "rotateInDownLeft",
             "rotateInDownRight",
@@ -458,10 +567,12 @@ animationInfinite: {
             "slideOutLeft",
             "slideOutRight",
             "slideOutUp"
-          ]
-        }
-      }
+          ],
+        };
+      },
     });
+    app.use(VAnimateCss.default)
+    app.mount("#app")
   </script>
 </body>
 
