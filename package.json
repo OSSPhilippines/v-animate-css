@@ -1,6 +1,6 @@
 {
-  "name": "v-animate-css",
-  "version": "1.0.1",
+  "name": "@ossph/v-animate-css",
+  "version": "2.0.0",
   "description": "Animate CSS for Vue.js 3",
   "main": "index.js",
   "scripts": {

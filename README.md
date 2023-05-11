@@ -13,7 +13,7 @@ If you like this project, please give it a star :star: , and consider following 
 ### Installation using **NPM** <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/npm/npm-original-wordmark.svg" width="30" height="30">
 
 ```shell
-npm install v-animate-css --save
+npm install @ossph/v-animate-css --save
 ```
 
 ### OR
@@ -21,7 +21,7 @@ npm install v-animate-css --save
 ### Installation using **YARN** <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg" width="30" height="30">
 
 ```shell
-yarn add v-animate-css
+yarn add @ossph/v-animate-css
 ```
 
 ### Or just **import** this to project without installing
@@ -30,7 +30,7 @@ yarn add v-animate-css
 ### Using **CDN** 
 
 ```script
-https://unpkg.com/v-animate-css/dist/v-animate-css.js
+https://unpkg.com/@ossph/v-animate-css/dist/v-animate-css.js
 ```
 
 ## **Getting Started**
@@ -39,14 +39,14 @@ https://unpkg.com/v-animate-css/dist/v-animate-css.js
 
 ```javascript
 import Vue from 'vue';
-import VAnimateCss from 'v-animate-css';
+import VAnimateCss from '@ossph/v-animate-css';
 
 Vue.use(VAnimateCss);
 ```
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
-<script src="https://unpkg.com/v-animate-css/dist/v-animate-css.js"></script>
+<script src="https://unpkg.com/@ossph/v-animate-css/dist/v-animate-css.js"></script>
 
 <script>
   Vue.use(VAnimateCss.default);
@@ -61,7 +61,7 @@ You can do it using the new animateCSSPath option.
 
 ```js
 import Vue from 'vue';
-import VAnimateCss from 'v-animate-css';
+import VAnimateCss from '@ossph/v-animate-css';
 
 Vue.use(VAnimateCss, { animateCSSPath: './local-animate-css-file.css' });
 
