@@ -1,32 +1,32 @@
 const path = require('path');
 const webpack = require('webpack');
 
-function createConfig(target) {
-  var name = 'index.js';
+function createConfig (target) {
+  let name = 'index.js';
 
-  if(target !== 'commonjs2') {
-    name = 'v-animate-css.js'
+  if (target !== 'commonjs2') {
+    name = 'v-animate-css.js';
   }
 
-  var output = {
+  let output = {
     library: 'VAnimateCss',
     libraryTarget: target,
     path: path.resolve(__dirname, 'dist'),
-    filename: name
-  }
+    filename: name,
+  };
 
-  if(typeof target === 'undefined') {
+  if (typeof target === 'undefined') {
     name = 'vue-animate-css.js';
     output = {
       path: path.resolve(__dirname, 'dist'),
-      filename: name
-    }
+      filename: name,
+    };
   }
 
   return {
     name: target,
     entry: './src',
-    output: output,
+    output,
     module: {
       rules: [
         {
@@ -35,16 +35,16 @@ function createConfig(target) {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['env']
-            }
-          }
-        }
-      ]
-    }
-  }
+              presets: ['env'],
+            },
+          },
+        },
+      ],
+    },
+  };
 }
 
 module.exports = [
   createConfig('var'),
-  createConfig('commonjs2')
-]
+  createConfig('commonjs2'),
+];
