@@ -6,7 +6,7 @@
 
 Animate.css for Vue.js 3
 
-If you like this project, please give it a star :star: , and consider following the author :octocat: :wink: .
+If you like this project, please give it a star :star: and consider following the author :octocat: :wink:.
 
 > Vue 2 version is no longer maintained but [the code is available here](https://github.com/OSSPhilippines/v-animate-css/tree/version/vue-2). You can still contribute if you wish so, and we will publish them for Vue 2.
 
